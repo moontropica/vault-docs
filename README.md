@@ -50,3 +50,9 @@ Replace variables on the left with ones associated in the smart contract.
 https://www.desmos.com/calculator/qzbc4usy3z
 
 ![2023-03-08_20-14-23](https://user-images.githubusercontent.com/33762147/224409053-1973a585-8b6b-4c05-b950-cf086cc6a68b.png)
+
+# How to Withdraw
+
+Use write contract to call `withdraw` function.
+
+![2023-04-01_16-00-12](https://user-images.githubusercontent.com/33762147/229316029-db30dca2-48c3-43bc-94b5-98cba93a18d3.jpg)
