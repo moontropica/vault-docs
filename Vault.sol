@@ -118,7 +118,16 @@ contract Vault {
         totalBalance -= amount;
         unlockedBalance -=amount;
         totalWithdraw += amount;
-        IERC20(tknContract).transfer(dest, amount);
+
+        (bool success, bytes memory returndata) = tknContract.call(
+            abi.encodeWithSignature("transfer(address,uint256)", dest, amount)
+        );
+        require(success, "token transfer failed");
+
+        if (returndata.length > 0) {
+            // Return data is optional
+            require(abi.decode(returndata, (bool)), "token transfer failed");
+        }
         emit Withdraw(dest, amount);
     }
 }
